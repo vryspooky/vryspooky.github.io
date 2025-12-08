@@ -1,5 +1,5 @@
-import * as WebGL2 from "WebGL2.js";
-import { Mat4 } from "Mat4.js";
+import * as WebGL2 from "./WebGL2.js";
+import { Mat4 } from "./Mat4.js";
 
     /////////////////////////////////
     // Particle Network Background //
