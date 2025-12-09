@@ -19,11 +19,15 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
-window.addEventListener('mousemove', (e) => {
+function updateMousePosition(e) {
     mouseX = e.clientX;
     mouseY = e.clientY;
     mousePanX = (e.clientX / window.innerWidth - 0.5) * 2;
     mousePanY = (e.clientY / window.innerHeight - 0.5) * -2;
+}
+
+window.addEventListener('mousemove', (e) => {
+    updateMousePosition(e);
 });
 
 const dots = [];
@@ -51,7 +55,8 @@ function isHoveringNameLabel() {
     return (mouseX > labelRect.left && mouseX < labelRect.left+labelRect.width && mouseY > labelRect.top && mouseY < labelRect.top+labelRect.height)
 }
 
-window.addEventListener('mousedown', () => {
+window.addEventListener('mousedown', e => {
+    updateMousePosition(e);
     if(isHoveringNameLabel()) {
         window.scrollTo({ top: window.innerHeight*0.9, behavior: 'smooth' });
     }
@@ -76,7 +81,7 @@ function render() {
             if(screenPoint) {
                 const x = (screenPoint.x + 1) / 2 * canvas.width;
                 const y = (1 - (screenPoint.y + 1) / 2) * canvas.height;
-                const size = Math.min(window.innerWidth, window.innerHeight) / 150 / screenPoint.z;
+                const size = Math.max(window.innerWidth, window.innerHeight) / 200 / screenPoint.z;
                 ctx.fillStyle = colors[i];
                 ctx.beginPath();
                 ctx.arc(x, y, size, 0, Math.PI*2);
