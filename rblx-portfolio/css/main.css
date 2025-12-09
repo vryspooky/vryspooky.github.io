@@ -1,0 +1,26 @@
+.name-label-bg {
+    font-family:"Londrina Solid", sans-serif;
+    transform:translate(-50%,-50%);
+    position:absolute;
+    font-size:14vmin;
+    left:50%;
+    top:50%;
+    text-shadow: -0.4vmin -0.4vmin rgb(20,21,22), 0.4vmin 0.4vmin rgb(20,21,22);
+    color:rgb(20,21,22);
+    user-select:none;
+    cursor:pointer;
+    z-index:1;
+}
+.name-label {
+    font-family:"Londrina Sketch", sans-serif;
+    transform:translate(-50%,-50%);
+    position:absolute;
+    font-size:14vmin;
+    left:50%;
+    top:50%;
+    text-shadow: -0.4vmin -0.4vmin rgb(209, 50, 45), 0.4vmin 0.4vmin rgb(56, 147, 77);
+    color:white;
+    user-select:none;
+    cursor:pointer;
+    z-index:2;
+}
