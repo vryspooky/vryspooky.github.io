@@ -1,28 +1,92 @@
-.name-label-bg {
-    font-family:"Londrina Solid", sans-serif;
+.name-label {
     transform:translate(-50%,-50%);
     position:absolute;
     font-size:14vmin;
     left:50%;
     top:50%;
-    text-shadow: -0.4vmin -0.4vmin rgb(20,21,22), 0.4vmin 0.4vmin rgb(20,21,22);
-    color:rgb(20,21,22);
     user-select:none;
     cursor:pointer;
-    z-index:1;
     white-space: nowrap;
 }
-.name-label {
+#name-label-1 {
+    color:white;
     font-family:"Londrina Sketch", sans-serif;
-    transform:translate(-50%,-50%);
+    z-index:1;
+    text-shadow: -0.4vmin -0.4vmin rgb(209, 50, 45), 0.4vmin 0.4vmin rgb(56, 147, 77);
+}
+#name-label-2 {
+    color:rgb(20,21,22,0);
+    font-family:"Londrina Solid", sans-serif;
+    z-index:2;
+}
+#name-label-3 {
+    color:white;
+    font-family:"Londrina Sketch", sans-serif;
+    z-index:3;
+}
+.link-icon-container {
+    width:7vmin;
+    height:7vmin;
+    background-color: rgb(40, 41, 42);
+    position:relative;
+    margin:1vmin;
+    border-radius: 50%;
+    outline:2px solid transparent;
+}
+.link-icon {
     position:absolute;
-    font-size:14vmin;
     left:50%;
     top:50%;
-    text-shadow: -0.4vmin -0.4vmin rgb(209, 50, 45), 0.4vmin 0.4vmin rgb(56, 147, 77);
+    transform: translate(-50%,-50%);
+}
+#avatar-canvas {
+    margin:4vmin;
+}
+.link-icon-container:hover {
+    outline:2px solid white;
+    transition: outline 0.2s;
+}
+.link-icon-row {
+    display:flex;
+    flex-direction:row;
+    width:fit-content;
+    height:fit-content;
+    position:absolute;
+    left:50%;
+    top:5vmin;
+    transform:translateX(-50%);
+    border-bottom: 1px solid rgb(200,200,200);
+    padding-bottom: 5vmin;
+    padding-left: 5vmin;
+    padding-right: 5vmin;
+}
+.section-header {
+    font-size:6vmin;
     color:white;
+    font-family:"Londrina Solid", sans-serif;
+    margin-top:10vmin;
+    margin-bottom:1vmin;
     user-select:none;
-    cursor:pointer;
-    z-index:2;
-    white-space: nowrap;
+}
+.section-content-container {
+    margin-right: 5vmin;
+}
+.section-content, .section-highlight, .section-link {
+    font-size: 2.5vmin;
+    color: white;
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 300;
+    max-width: 80vmin;
+    user-select: none;
+}
+.section-highlight {
+    color: rgb(209, 50, 45);
+}
+.section-link {
+    color: rgb(209, 50, 45);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.section-link:hover {
+    color: rgb(255, 100, 90);
 }
