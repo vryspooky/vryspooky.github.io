@@ -1,3 +1,6 @@
+
+// made by sllenderbrine
+
 export class Vec2 {
     constructor(x,y) {
         x = x ?? 0;
