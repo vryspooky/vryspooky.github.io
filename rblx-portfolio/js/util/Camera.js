@@ -2,6 +2,8 @@ import { Vec3 } from "./Vec3.js";
 import { Vec2 } from "./Vec2.js";
 import { Mat4 } from "./Mat4.js";
 
+// made by sllenderbrine
+
 export class Camera {
     constructor(width=16, height=9, fovx=Math.PI/4) {
         this.position = new Vec3();
@@ -24,7 +26,7 @@ export class Camera {
         this.translationMatrix = Mat4.translation(-this.position.x, -this.position.y, -this.position.z);
     }
     updateRotationMatrix() {
-        this.rotationMatrix = Mat4.rotationXYZ(-this.rotation.x, -this.rotation.y, -this.rotation.z);
+        this.rotationMatrix = Mat4.rotationZYX(-this.rotation.x, -this.rotation.y, -this.rotation.z);
     }
     updateProjectionMatrix() {
         this.projectionMatrix = Mat4.perspective(this.fovx, this.aspect, 1, 1000);
