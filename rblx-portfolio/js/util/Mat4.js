@@ -1,5 +1,7 @@
 import { Vec3 } from './Vec3.js'
 
+// made by sllenderbrine
+
 export class Mat4 {
     // Row-Major 4x4 Matrix
     constructor(...a) {
