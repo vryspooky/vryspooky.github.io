@@ -1,5 +1,5 @@
-import { Vec3 } from "./Vec3.js";
-import { Camera } from "./Camera.js";
+import { Vec3 } from "./util/Vec3.js";
+import { Camera } from "./util/Camera.js";
 
 const canvas = document.querySelector("#background-canvas");
 const ctx = canvas.getContext('2d');
@@ -46,12 +46,13 @@ for(let i=0;i<1000;i++) {
         colors.push(`rgb(${color.x},${color.y},${color.z})`)
     }
 }
-const nameLabel = document.querySelector(".name-label");
-const nameLabelBG = document.querySelector(".name-label-bg");
+const nameLabel1 = document.querySelector("#name-label-1");
+const nameLabel2 = document.querySelector("#name-label-2");
+const nameLabel3 = document.querySelector("#name-label-3");
 let hoveringNameLabel = false;
 
 function isHoveringNameLabel() {
-    const labelRect = nameLabel.getBoundingClientRect();
+    const labelRect = nameLabel1.getBoundingClientRect();
     return (mouseX > labelRect.left && mouseX < labelRect.left+labelRect.width && mouseY > labelRect.top && mouseY < labelRect.top+labelRect.height)
 }
 
@@ -94,26 +95,22 @@ function render() {
     let lastHoveringNameLabel = hoveringNameLabel;
     hoveringNameLabel = isHoveringNameLabel();
     if(hoveringNameLabel && !lastHoveringNameLabel) {
-        nameLabel.style.zIndex = 1;
-        nameLabelBG.style.zIndex = 2;
-        nameLabelBG.style.color = "white";
-        nameLabelBG.style.textShadow = "none";
-        nameLabelBG.animate([
-            { opacity:0 },
-            { opacity:1 },
+        nameLabel2.animate([
+            { color:"rgba(20,21,22,0)" },
+            { color:"rgba(255,255,255,1)" },
         ],{ duration: 100, easing: "ease", fill: "forwards" });
-        nameLabel.animate([
-            { textShadow: "-0.4vmin -0.4vmin rgb(209, 50, 45), 0.4vmin 0.4vmin rgb(56, 147, 77)" },
-            { textShadow: "-1vmin -0.4vmin rgb(209, 50, 45), 1vmin 0.4vmin rgb(56, 147, 77)" },
+        nameLabel1.animate([
+            { textShadow:"-0.4vmin -0.4vmin rgb(209, 50, 45), 0.4vmin 0.4vmin rgb(56, 147, 77)" },
+            { textShadow:"-1vmin -0.4vmin rgb(209, 50, 45), 1vmin 0.4vmin rgb(56, 147, 77)" },
         ],{ duration: 100, easing: "ease", fill: "forwards" });
     } else if(!hoveringNameLabel && lastHoveringNameLabel) {
-        nameLabel.style.zIndex = 2;
-        nameLabelBG.style.zIndex = 1;
-        nameLabelBG.style.color="rgb(20,21,22)";
-        nameLabelBG.style.textShadow = "-0.4vmin -0.4vmin rgb(20,21,22), 0.4vmin 0.4vmin rgb(20,21,22)";
-        nameLabel.animate([
-            { textShadow: "-1vmin -0.4vmin rgb(209, 50, 45), 1vmin 0.4vmin rgb(56, 147, 77)" },
-            { textShadow: "-0.4vmin -0.4vmin rgb(209, 50, 45), 0.4vmin 0.4vmin rgb(56, 147, 77)" },
+        nameLabel2.animate([
+            { color:"rgba(255,255,255,1)" },
+            { color:"rgba(20,21,22,0)" },
+        ],{ duration: 100, easing: "ease", fill: "forwards" });
+        nameLabel1.animate([
+            { textShadow:"-1vmin -0.4vmin rgb(209, 50, 45), 1vmin 0.4vmin rgb(56, 147, 77)" },
+            { textShadow:"-0.4vmin -0.4vmin rgb(209, 50, 45), 0.4vmin 0.4vmin rgb(56, 147, 77)" },
         ],{ duration: 100, easing: "ease", fill: "forwards" });
     }
 
