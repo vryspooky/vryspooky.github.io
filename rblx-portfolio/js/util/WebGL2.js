@@ -1,3 +1,6 @@
+
+// made by sllenderbrine
+
 export class Shader {
     constructor(gl, shaderType, content) {
         this.gl = gl;
@@ -57,9 +60,9 @@ export class Buffer {
         const gl = this.gl;
         gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
     }
-    bufferData(values) {
+    bufferData(values, usage=this.gl.STATIC_DRAW) {
         const gl = this.gl;
-        gl.bufferData(gl.ARRAY_BUFFER, values, gl.STATIC_DRAW);
+        gl.bufferData(gl.ARRAY_BUFFER, values, usage);
     }
     delete() {
         const gl = this.gl;
