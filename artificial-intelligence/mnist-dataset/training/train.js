@@ -1,6 +1,6 @@
-import * as Networks from "../../js/Networks.js";
-import * as NetworkUtils from "../../js/NetworkUtils.js";
-import * as MnistEnv from "../../js/MnistEnv.js";
+import * as Networks from "../../../js/Networks.js";
+import * as NetworkUtils from "../../../js/NetworkUtils.js";
+import * as MnistEnv from "../../../js/MnistEnv.js";
 
 async function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
