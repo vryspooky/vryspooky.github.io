@@ -1,5 +1,6 @@
-import * as Networks from "../js/Networks.js";
-import * as MnistEnv from "../js/MnistEnv.js";
+import * as Networks from "../../js/Networks.js";
+import * as NetworkUtils from "../../js/NetworkUtils.js";
+import * as MnistEnv from "../../js/MnistEnv.js";
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -40,8 +41,8 @@ function guessLoop() {
 fetch("./test-weights.txt").then(res=>res.text()).then(text=>{
     network = new Networks.SimpleFCNN({
       layerLengths: [784, 128, 64, 10],
-      activations: [Networks.IDENTITY, Networks.RELU, Networks.RELU, Networks.SOFTMAX],
-      lossFunction: Networks.CROSS_ENTROPY,
+      activations: [NetworkUtils.IDENTITY, NetworkUtils.RELU, NetworkUtils.RELU, NetworkUtils.SOFTMAX],
+      lossFunction: NetworkUtils.CROSS_ENTROPY,
     });
     network.importWeights(text);
   
