@@ -184,3 +184,19 @@ export class Texture3D {
         gl.deleteTexture(this.texture);
     }
 }
+
+export function createTopFace(arr,i,j,k,x,y,z) { arr.push( i,y,k,  x,y,z,  x,y,k,  i,y,k,  i,y,z,  x,y,z ); }
+export function createBottomFace(arr,i,j,k,x,y,z) { arr.push( i,j,k,  x,j,k,  x,j,z,  i,j,k,  x,j,z,  i,j,z ); }
+export function createFrontFace(arr,i,j,k,x,y,z) { arr.push( i,j,z,  x,j,z,  x,y,z,  i,j,z,  x,y,z,  i,y,z ); }
+export function createBackFace(arr,i,j,k,x,y,z) { arr.push( i,j,k,  x,y,k,  x,j,k,  i,j,k,  i,y,k,  x,y,k ); }
+export function createRightFace(arr,i,j,k,x,y,z) { arr.push( x,j,k,  x,y,k,  x,y,z,  x,j,k,  x,y,z,  x,j,z ); }
+export function createLeftFace(arr,i,j,k,x,y,z) { arr.push( i,j,k,  i,y,z,  i,y,k,  i,j,k,  i,j,z,  i,y,z ); }
+export function createTopFaceTexcoords(arr,i,j,x,y) { arr.push( x,y,  i,j,  i,y,  x,y,  x,j,  i,j ); }
+export function createBottomFaceTexcoords(arr,i,j,x,y) { arr.push( x,y,  i,y,  i,j,  x,y,  i,j,  x,j ); }
+export function createFrontFaceTexcoords(arr,i,j,x,y) { arr.push( x,y,  i,y,  i,j,  x,y,  i,j,  x,j ); }
+export function createBackFaceTexcoords(arr,i,j,x,y) { arr.push( x,y,  i,j,  i,y,  x,y,  x,j,  i,j ); }
+export function createRightFaceTexcoords(arr,i,j,x,y) { arr.push( x,y,  x,j,  i,j,  x,y,  i,j,  i,y ); }
+export function createLeftFaceTexcoords(arr,i,j,x,y) { arr.push( x,y,  i,j,  x,j,  x,y,  i,y,  i,j ); }
+export function createFaceAtlascoords(arr,x,y,w,h) { arr.push( x,y,w,h,  x,y,w,h,  x,y,w,h,  x,y,w,h,  x,y,w,h,  x,y,w,h ); }
+export function createQuad(arr,i,j,x,y) { arr.push( i,j,  x,j,  x,y,  i,j,  x,y,  i,y ); }
+export function createQuadTexcoords(arr,i,j,x,y) { arr.push( x,y,  i,y,  i,j,  x,y,  i,j,  x,j ); }
