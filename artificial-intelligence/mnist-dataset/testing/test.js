@@ -1,6 +1,6 @@
-import * as Networks from "../../js/Networks.js";
-import * as NetworkUtils from "../../js/NetworkUtils.js";
-import * as MnistEnv from "../../js/MnistEnv.js";
+import * as Networks from "../../../js/Networks.js";
+import * as NetworkUtils from "../../../js/NetworkUtils.js";
+import * as MnistEnv from "../../../js/MnistEnv.js";
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
